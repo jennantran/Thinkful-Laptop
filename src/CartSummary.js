@@ -9,12 +9,12 @@ class CartSummary extends Component {
             style: 'currency',
             currency: 'USD'
     });
-        const summary = Object.keys(this.state.selected).map((feature, idx) => {
+        const summary = Object.keys(this.props.selected).map((feature, idx) => {
             const featureHash = feature + '-' + idx;
-            const selectedOption = this.state.selected[feature];
+            const selectedOption = this.props.selected[feature];
 
             return(
-                <CartItem USCurrency={USCurrencyFormat} featureHash={featureHash} selectedOption={selectedOption} feature={feature} />
+                <CartItem  itemHash={this.props.itemHash} updateFeature={this.props.updateFeature} USCurrency={USCurrencyFormat} selected={this.props.selected} item={this.props.item} featureHash={featureHash} selectedOption={selectedOption} feature={feature} />
             )
 
             return (
@@ -32,7 +32,7 @@ class CartSummary extends Component {
             <section className="main__summary">
                 <h2>Your cart</h2>
                 {summary}
-                <Total></Total>
+                {/* <Total></Total> */}
             </section>
             );
           }      
