@@ -27,6 +27,7 @@ class CartSummary extends Component {
             <section className="main__summary">
                 <h2>Your cart</h2>
                 {summary}
+                <CartItem></CartItem>
                 <Total></Total>
             </section>
             );

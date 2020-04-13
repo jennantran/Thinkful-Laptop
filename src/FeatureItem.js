@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import slugify from 'slugify';
 
 class FeatureItem extends Component {
+    const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+});
     render() {
         return(
             <div key={this.props.itemHash} className="feature__item">
