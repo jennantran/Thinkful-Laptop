@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import CartItem from './CartItem';
 
 class CartSummary extends Component {
     render(){
@@ -12,6 +13,10 @@ class CartSummary extends Component {
             const featureHash = feature + '-' + idx;
             const selectedOption = this.state.selected[feature];
 
+            return(
+                <CartItem USCurrency={USCurrencyFormat} featureHash={featureHash} selectedOption={selectedOption} feature={feature} />
+            )
+
             return (
                 <div className="summary__option" key={featureHash}>
                     <div className="summary__option__label">{feature} </div>
@@ -20,14 +25,13 @@ class CartSummary extends Component {
                     {USCurrencyFormat.format(selectedOption.cost)}
                     </div>
                 </div>
-                )
-            }
+                );
+            });
             
         return(
             <section className="main__summary">
                 <h2>Your cart</h2>
                 {summary}
-                <CartItem></CartItem>
                 <Total></Total>
             </section>
             );

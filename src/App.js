@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import CartSummary from './CartSummary';
-import FeatureItemList from './FeatureItemList';
+import CartSummary from './CartSummary';
+// import FeatureItemList from './FeatureItemList';
 
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
@@ -44,8 +44,8 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <FeatureItemList features={this.props.features} selected={this.state.selected} updateFeature={this.updateFeature}></FeatureItemList>
-          {/* <CartSummary selected={this.state.selected}></CartSummary> */}
+          {/* <FeatureItemList features={this.props.features} selected={this.state.selected} updateFeature={this.updateFeature}></FeatureItemList> */}
+          <CartSummary selected={this.state.selected}></CartSummary>
         </main>
       </div>
     );
