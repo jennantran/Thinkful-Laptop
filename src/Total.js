@@ -11,7 +11,7 @@ class Total extends Component {
     <div className="summary__total">
     <div className="summary__total__label">Total</div>
     <div className="summary__total__value">
-        {props.USCurrency.format(total)}
+        {this.props.USCurrency.format(total)}
     </div>
     </div>
     )}
