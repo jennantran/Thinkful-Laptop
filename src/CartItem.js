@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import slugify from 'slugify';
+
 
 class CartItem extends Component{   
   render() {   
