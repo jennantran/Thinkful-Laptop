@@ -1,26 +1,13 @@
 import React, { Component } from 'react';
-import FeatureItem from './FeatureItem';
-import slugify from 'slugify';
+import Feature from './Feature.js';
 
 class FeatureItemList extends Component {
 
     render(){
      const features = Object.keys(this.props.features).map((feature, idx) => {
-        const featureHash = feature + '-' + idx;
-        const options = this.props.features[feature].map(item => {
-          const itemHash = slugify(JSON.stringify(item));
-          return (
-           <FeatureItem updateFeature={this.props.updateFeature} itemHash={itemHash} feature={feature} item={item} selected={this.props.selected}/>
-          );
-        });
-  
+        const featureHash = feature + '-' + idx; 
         return (
-          <fieldset className="feature" key={featureHash}>
-            <legend className="feature__name">
-              <h3>{feature}</h3>
-            </legend>
-            {options}
-          </fieldset>
+          <Feature key={featureHash} selected = {this.props.selected} features = {this.props.features} currentFeature = {feature} featureHash = {featureHash}/>
         );
       });
 

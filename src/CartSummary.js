@@ -15,7 +15,7 @@ class CartSummary extends Component {
             const selectedOption = this.props.selected[feature];
 
             return(
-                <CartItem USCurrency={USCurrencyFormat} featureHash={featureHash} selectedOption={selectedOption} feature={feature} />
+                <CartItem USCurrency={USCurrencyFormat} key= {featureHash} featureHash={featureHash} selectedOption={selectedOption} feature={feature} />
             )
 
         });
