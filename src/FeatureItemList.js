@@ -7,7 +7,7 @@ class FeatureItemList extends Component {
      const features = Object.keys(this.props.features).map((feature, idx) => {
         const featureHash = feature + '-' + idx; 
         return (
-          <Feature key={featureHash} selected = {this.props.selected} features = {this.props.features} currentFeature = {feature} featureHash = {featureHash}/>
+          <Feature key={featureHash} selected = {this.props.selected} features = {this.props.features} currentFeature = {feature} featureHash = {featureHash} updateFeature={this.props.updateFeature}/>
         );
       });
 
